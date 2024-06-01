@@ -1,0 +1,382 @@
+/** @format */
+
+.user_details {
+  width: 700px;
+  height: auto;
+}
+
+.user_details {
+  display: flex;
+  flex-direction: column;
+}
+.post_details {
+  height: auto;
+}
+.popup-title {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  width: 80%;
+  justify-content: space-between;
+}
+.popup-content {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profile_details {
+  width: 680px;
+  margin-top: 60px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+.profile_box {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 10px 40px 40px 40px;
+}
+.profile_photo {
+  width: 20%;
+  height: auto;
+}
+.image-profile {
+  height: auto;
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+  }
+}
+.profile_content {
+  height: auto;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.content_box {
+  width: 100%;
+  height: auto;
+  margin: 10px 0px;
+}
+.user_name button {
+  font-weight: bold;
+  margin-left: 50px;
+  background-color: #743089;
+  padding: 0px 30px;
+  border-radius: 20px;
+  height: 40px;
+  color: white;
+  border: none;
+  &:hover {
+    background-color: #5b266b;
+  }
+}
+
+.followers_details_section {
+  display: flex;
+  p {
+    margin-right: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+      color: #743089;
+    }
+  }
+}
+
+.user-profile-header {
+  z-index: 2;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #efe8f1f3;
+  top: 0;
+  width: 51%;
+  position: fixed;
+}
+
+.user_descripton {
+  p {
+    margin: 8px 0px;
+    display: flex;
+    text-align: justify;
+    height: auto;
+  }
+  a {
+    color: rgb(0, 123, 255);
+  }
+  img {
+    height: 20px;
+    margin-right: 10px;
+  }
+  h4 {
+    height: auto;
+  }
+}
+.post_details_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+  height: fit-content;
+  img {
+    height: 20px;
+    margin-right: 10px;
+  }
+}
+.popup-profile {
+  display: flex;
+  align-items: center;
+}
+.post_detail_content {
+  padding-bottom: 60px;
+}
+
+.detail_box {
+  margin: 0px 30px;
+  display: flex;
+  border-bottom: 4px solid #efe8f1;
+  padding: 10px 0px;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.myposts-bookmark-section {
+  position: relative;
+}
+.active_class {
+  border-bottom: 4px solid #743089;
+  padding: 10px 0;
+  display: flex;
+}
+.profile-header-user {
+  height: auto;
+  width: 100%;
+  span {
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 50px;
+  }
+}
+.profile-header-pst {
+  height: auto;
+  width: 100%;
+  display: flex;
+  p {
+    font-size: 15px;
+    left: 0;
+    margin-left: 50px;
+  }
+}
+.bookmarkcontent {
+  border: 2px solid green;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .image-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    div {
+      display: flex;
+      align-items: center;
+    }
+    .custom-file-input {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      background-color: #743089;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 10px;
+      cursor: pointer;
+      input[type='file'] {
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        cursor: pointer;
+        background-color: green;
+      }
+    }
+    .custom-file-input:hover {
+      background-color: #5b266b;
+      cursor: pointer;
+    }
+  }
+  img {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  input {
+    color: black;
+    margin-bottom: 10px;
+    width: 70%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+  }
+  div {
+    button {
+      background: none;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      background-color: white;
+      border: 1px solid #c2c8d0;
+      cursor: pointer;
+      &:hover {
+        background-color: #dddd;
+      }
+      &:nth-child(1) {
+        background-color: #743089;
+        color: white;
+        &:hover {
+          background-color: #5b266b;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .user-profile-header {
+    display: hidden;
+  }
+  .profile_details {
+    width: 500px;
+  }
+  .profile_box {
+    padding: 10px;
+  }
+  .profile_content {
+    width: 180px;
+  }
+  .user_name {
+    span {
+      display: none;
+    }
+  }
+
+  .userprofile-btn {
+    display: flex;
+    align-items: center;
+    span {
+      margin-top: 20px;
+      display: block;
+      height: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .profile_details {
+    width: 700px;
+  }
+  .profile_box {
+    padding: 10px;
+  }
+  .profile_content {
+    width: 250px;
+  }
+  .user_name {
+    span {
+      display: none;
+    }
+  }
+
+  .userprofile-btn {
+    display: flex;
+    align-items: center;
+    span {
+      margin-top: 20px;
+      display: block;
+      height: 40px;
+    }
+  }
+  .user-profile-header {
+    margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .user-profile-header {
+    display: hidden;
+  }
+
+  .profile_details {
+    width: 500px;
+  }
+  .profile_box {
+    padding: 10px;
+  }
+  .profile_content {
+    width: 180px;
+  }
+  .user_name {
+    span {
+      display: none;
+    }
+  }
+  .image-profile {
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .userprofile-btn {
+    display: flex;
+    align-items: center;
+    span {
+      margin-top: 20px;
+      display: block;
+      height: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .profile_details {
+    width: 600px;
+  }
+  .profile_box {
+    padding: 10px;
+  }
+  .profile_content {
+    width: 200px;
+  }
+  .user_name {
+    span {
+      display: none;
+    }
+  }
+
+  .userprofile-btn {
+    display: flex;
+    align-items: center;
+    span {
+      margin-top: 20px;
+      display: block;
+      height: 40px;
+    }
+  }
+  .user-profile-header {
+    margin-left: 150px;
+  }
+}

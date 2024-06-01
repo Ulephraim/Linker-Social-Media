@@ -1,0 +1,190 @@
+/** @format */
+.right-main {
+  width: 340px;
+}
+.rightSidebar-header {
+  height: 80px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  margin: 70px 0px 20px 0px;
+  position: relative;
+}
+.input-section-box {
+  z-index: 2;
+  width: 350px;
+  background-color: #efe8f1f3;
+  top: 0;
+  position: fixed;
+  height: 54px;
+}
+.input-section {
+  display: flex;
+  width: 300px;
+  padding: 0;
+  margin: 10px 0px 0px 12px;
+  height: 30px;
+  justify-content: center;
+}
+.input-section button {
+  border: none;
+  height: 30px;
+  background: none;
+  margin-left: -40px;
+  padding: 10px 0px;
+}
+.input-section img {
+  height: 20px;
+}
+.input-section input {
+  border: none;
+  margin-left: 0;
+  padding: 5px 20px;
+  background-color: #dddd;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 25px;
+  color: black;
+}
+.view-btn {
+  position: absolute;
+  left: 270px;
+  button {
+    font-size: 15px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: #743089;
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
+  }
+}
+.connect-custom-link p {
+  color: #743089;
+  &:hover {
+    color: black;
+  }
+}
+
+.btn {
+  position: absolute;
+  right: 0;
+  background-color: #743089;
+  padding: 0px 20px;
+  border-radius: 20px;
+  height: 40px;
+  &:hover {
+    background-color: #5b266b;
+  }
+  button {
+    font-weight: bold;
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}
+.content-heading {
+  display: flex;
+  height: 18px;
+  margin: 0px 15px 0px 5px;
+  justify-content: space-between;
+  > p {
+    color: gray;
+    height: 18px;
+    font-weight: bold;
+  }
+}
+.content-body {
+  margin: 30px 0px;
+}
+.suggestions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 5px 0px;
+  cursor: pointer;
+  height: 55px;
+}
+.userImg {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-self: center;
+}
+.userDetail {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+.username {
+  margin-top: 30px;
+  margin-bottom: 0;
+  height: 40px;
+  padding: 0;
+  p {
+    display: flex;
+  }
+}
+.name {
+  margin-bottom: 30px;
+  margin-top: 0;
+  height: 40px;
+  padding: 0;
+}
+.righSidebar-content {
+  padding: 20px;
+  height: 920px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.search-drawer {
+  position: fixed;
+  z-index: 100;
+  border-radius: 10px;
+}
+
+.search-drawer.open {
+  position: fixed;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+  max-height: 65vh;
+  overflow: auto;
+  width: 350px;
+  z-index: 100;
+}
+.searched-user {
+  background-color: white;
+
+  padding: 20px;
+}
+.search-drawer::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 20px;
+}
+.search-drawer::-webkit-scrollbar-track {
+  width: 8px;
+
+  border-radius: 20px;
+}
+.search-drawer::-webkit-scrollbar-thumb {
+  width: 8px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+  .input-section-box {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .right-main {
+    display: none;
+  }
+}

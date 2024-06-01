@@ -1,0 +1,46 @@
+/** @format */
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+.custom-toaster {
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+}
+
+.custom-toaster > .toast {
+  margin-bottom: 10px;
+}
+
+.custom-toaster .toast-progress {
+  background-color: #ff4500;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #cccc;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #743089;
+  &:hover {
+    background-color: #5b266b;
+  }
+}
+
+/* @media screen and (max-width: 650px) {
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+} */

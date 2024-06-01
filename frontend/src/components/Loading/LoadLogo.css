@@ -1,0 +1,25 @@
+/** @format */
+* {
+  height: 100%;
+  margin: 0;
+}
+
+.LoadLogo-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.logo {
+  height: 300px;
+  width: 300px;
+}
+
+.loading-spinner {
+  height: 25px;
+  width: 25px;
+  padding: auto;
+  margin: auto;
+}

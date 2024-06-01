@@ -1,0 +1,232 @@
+/** @format */
+
+.post {
+  display: block;
+  height: auto;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 1px 5px rgb(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin: 10px;
+  margin-left: 30px;
+}
+
+.post-header {
+  height: 20px;
+  margin: 10px 0px 10px 0px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.post-description {
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.caption {
+  color: black;
+  height: fit-content;
+  display: flex;
+  margin-bottom: 15px;
+}
+.image {
+  img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+  }
+}
+.username p {
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+}
+
+.post-footer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+  div {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+}
+.action {
+  background: none;
+  border: none;
+  margin-right: 5px;
+  img {
+    height: 22px;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }
+}
+.mini-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.likes-footer {
+  color: rgb(139, 139, 139);
+  cursor: pointer;
+}
+.timestamp {
+  color: rgb(139, 139, 139);
+}
+.action {
+  background: none;
+  border: none;
+  margin-right: 5px;
+  img {
+    height: 22px;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }
+}
+
+.post-comments {
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: 20px;
+  span {
+    margin: 0px 30px;
+    color: black;
+    height: 20px;
+    display: flex;
+    .reply-user {
+      margin-left: 5px;
+    }
+  }
+}
+.post-comment {
+  margin: 10px;
+  display: flex;
+  textarea {
+    width: 100%;
+    background-color: #efe8f1;
+    height: 30px;
+    font-family: 'inter', sans-serif;
+    margin: 0px 10px 0px 0px;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    font-size: 15px;
+    -webkit-rtl-ordering: logical;
+    resize: -internal-textarea-auto;
+  }
+  button {
+    padding: 0px 20px;
+    border-radius: 20px;
+    border: none;
+    height: 40px;
+    color: white;
+    background-color: #743089;
+    font-weight: bold;
+    &:hover {
+      background-color: #5b266b;
+      cursor: pointer;
+    }
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #743089;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    cursor: pointer;
+  }
+}
+.open {
+  max-height: 80px;
+}
+
+.options-icon {
+  height: 30px;
+  text-align: center;
+  width: 30px;
+  border-radius: 100%;
+  &:hover {
+    background-color: #dddd;
+    cursor: pointer;
+    border-radius: 100%;
+  }
+  p {
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+  }
+}
+.options {
+  position: absolute;
+  top: 0;
+  left: 70%;
+  background-color: white;
+  border: 1px solid rgb(65, 65, 65);
+  box-shadow: 0px 1px 5px rgb(0, 0, 0, 0.2);
+  margin-top: 30px;
+  transition: 1s ease-in-out;
+  margin-left: 100px;
+  padding: 5px;
+  height: 60px;
+  border-radius: 10px;
+  width: 100px;
+  display: block;
+  cursor: pointer;
+  div {
+    height: auto;
+    align-items: center;
+    padding: 3px 10px;
+    margin: 3px;
+    border-radius: 10px;
+    &:hover {
+      background-color: #dddd;
+    }
+  }
+}
+.popup-heading {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.popup-content {
+  textarea {
+    width: 96%;
+    height: 280px;
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border-style: none;
+    font-family: 'inter', sans-serif;
+    outline: none;
+    font-size: 15px;
+  }
+}
+.popup-foot {
+  button {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .options {
+    left: 180px;
+  }
+}

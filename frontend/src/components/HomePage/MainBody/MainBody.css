@@ -1,0 +1,48 @@
+/** @format */
+
+main {
+  height: 100vh;
+  display: flex;
+}
+
+.left-sidebar {
+  width: 30%;
+}
+
+.middle-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  background-color: #efe8f1;
+}
+.post-section {
+  width: 700px;
+  height: 100%;
+}
+.right-sidebar {
+  width: 400px;
+  padding-left: 20px;
+  height: 1000px;
+  position: sticky;
+  top: -600px;
+}
+@media screen and (max-width: 500px) {
+  .right-sidebar {
+    display: none;
+  }
+  .right_sidebar {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .right-sidebar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .right_sidebar {
+    display: none;
+  }
+}

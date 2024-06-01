@@ -1,0 +1,141 @@
+/** @format */
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+.brand-logo {
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.brand-logo img {
+  padding-top: 10px;
+  width: 80px;
+  height: 80px;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.check-box {
+  align-self: flex-start;
+  justify-self: flex-start;
+  margin-left: 20px;
+  height: 25px;
+  input {
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  width: 350px;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 40px 40px 40px;
+}
+.content-wrapper h1 {
+  padding: 10px 0px;
+  height: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  margin: 0px;
+  border-bottom: none;
+  height: auto;
+  input {
+    border: none;
+    height: 25px;
+    border: 1px solid #c2c8d0;
+  }
+  input:focus {
+    background-color: white;
+  }
+}
+
+form input {
+  color: black;
+  margin: 7px 0px;
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.form-btn {
+  background-color: #743089;
+  color: white;
+  height: 45px;
+  font-size: 18px;
+  margin-top: 10px;
+  width: 320px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: none;
+
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background-color: #5b266b;
+  }
+}
+.login-link {
+  background-color: white;
+  color: black;
+  display: flex;
+  height: 45px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 320px;
+  border: 1px solid #c2c8d0;
+  border-radius: 10px;
+  span {
+    color: black;
+    align-items: center;
+    display: flex;
+  }
+}
+.custom-link p {
+  height: auto;
+
+  color: black;
+  font-weight: bold;
+}
+.custom-link span {
+  color: #743089;
+  margin-left: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+}
+.btn-span {
+  background-color: white;
+  margin-top: -24px;
+  padding: 10px;
+}
+p {
+  text-align: center;
+}
