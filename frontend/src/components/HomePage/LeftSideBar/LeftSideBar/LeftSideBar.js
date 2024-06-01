@@ -10,6 +10,7 @@ import notification from '../../../../assets/notification.png';
 import logout from '../../../../assets/logout-dark.png';
 import notificationDark from '../../../../assets/notification-dark.png';
 import connect from '../../../../assets/connect.png';
+import passwordIcon from '../../../../assets/change-password.png';
 import connectDark from '../../../../assets/connect-dark.png';
 import warninglogo from '../../../../assets/warning-red.png';
 import deleteIcon from '../../../../assets/delete-dark.png';
@@ -242,7 +243,7 @@ const LeftSideBar = () => {
               </div>
               <Link to="/changePassword">
                 <div className="options-left-boxes">
-                  <img src={deleteIcon} alt="" />
+                  <img src={passwordIcon} alt="" />
                   <p>Change Password</p>
                 </div>
               </Link>
