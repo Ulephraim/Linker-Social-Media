@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: ['https://linker-social-media.vercel.app'],
   methods: ['POST', 'GET'],
   credentials: true,
 };
