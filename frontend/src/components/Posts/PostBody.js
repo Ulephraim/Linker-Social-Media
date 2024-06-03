@@ -98,8 +98,10 @@ const PostBody = ({
 
   const handleBookmarkClick = async () => {
     setIsBookmark((prev) => !prev);
+    dispatch(setProgress(50));
     await dispatch(bookmarkPost(postId));
     dispatch(loadUser());
+    dispatch(setProgress(100));
   };
 
   useEffect(() => {

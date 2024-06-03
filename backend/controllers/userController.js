@@ -39,7 +39,7 @@ export const register = async (req, res, next) => {
       password: hashedPassword,
       avatar: {
         public_id: '',
-        url: 'https://res.cloudinary.com/dbhp5hkg9/image/upload/v1716050250/cld-sample.jpg',
+        url: 'https://res.cloudinary.com/dbhp5hkg9/image/upload/v1717283362/Profile-Avatar.svg',
       },
     });
 
@@ -235,7 +235,7 @@ export const deleteAvatar = async (req, res) => {
 
     user.avatar = {
       public_id: '',
-      url: 'https://res.cloudinary.com/dbhp5hkg9/image/upload/v1716050250/cld-sample.jpg',
+      url: 'https://res.cloudinary.com/dbhp5hkg9/image/upload/v1717283362/Profile-Avatar.svg',
     };
 
     await user.save();

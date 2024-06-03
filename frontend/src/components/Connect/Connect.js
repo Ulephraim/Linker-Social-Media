@@ -38,7 +38,8 @@ const Connect = () => {
   };
 
   const isUserFollowed = (userId) =>
-    user.following.some((follow) => follow._id === userId);
+    user?.following?.some((follow) => follow._id === userId);
+
   return (
     <main>
       <Helmet>
@@ -61,7 +62,7 @@ const Connect = () => {
           {users
             ? users.map((element, index) => {
                 const { name, userName, _id, avatar } = element;
-                return user.userName !== userName ? (
+                return user && user.userName !== userName ? (
                   <div className="suggestions" key={index}>
                     <User
                       userId={_id}

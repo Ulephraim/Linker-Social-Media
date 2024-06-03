@@ -143,14 +143,14 @@ const LeftSideBar = () => {
       <div className="leftSidebar-content">
         <div className="leftSidebar-Upcontent">
           <Link
-            to="/"
-            onClick={() => {
-              handleAllPosts();
-              handleOptionClick('home');
-            }}
             className={`left-boxes ${
               selectedOption === 'home' ? 'active' : ''
             }`}
+            onClick={() => {
+              handleOptionClick('home');
+              handleAllPosts();
+            }}
+            to="/"
           >
             <img src={selectedOption === 'home' ? home : homedark} alt="Home" />
             <p>Home</p>
@@ -193,11 +193,11 @@ const LeftSideBar = () => {
           </Link>
 
           <Link
-            to="/profile"
-            onClick={handleMyPosts}
             className={`left-boxes ${
               selectedOption === 'profile' ? 'active' : ''
             }`}
+            onClick={handleMyPosts}
+            to="/profile"
           >
             <img src={userImg} alt="user profile" />
             <p>Profile</p>
