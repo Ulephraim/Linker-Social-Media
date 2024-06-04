@@ -54,7 +54,7 @@ app.use('/post', postRouter);
 app.use('/follow', followRouter);
 
 app.get('/', (req, res) => {
-  res.send('Server is working fine');
+  res.json('Server is working fine');
 });
 
 connectToDB();
