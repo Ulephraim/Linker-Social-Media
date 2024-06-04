@@ -27,7 +27,7 @@ const corsOptions = {
     // Check if the origin matches the pattern *.vercel.app
     if (
       origin &&
-      (origin.match(/^https?:\/\/(.*\.)?vercel\.app$/) ||
+      (origin.match('https://linker-social-media.vercel.app') ||
         origin === 'http://localhost:3000')
     ) {
       callback(null, true);
@@ -54,7 +54,7 @@ app.use('/post', postRouter);
 app.use('/follow', followRouter);
 
 app.get('/', (req, res) => {
-  res.json('Server is working fine');
+  res.send('Server is working fine');
 });
 
 connectToDB();
