@@ -8,7 +8,7 @@ Building Blocks:
 Getting Started (Frontend): 
 
 1. Install Node.js and npm (software tools).
-2. Download the project files using a command.
+2. Download the project files using a command, Navigating to project directory.
 3. Locate the project folder on your computer.
 4. Set up a secret file .env to store the app's connection details.
 5. Install the required software libraries. 
