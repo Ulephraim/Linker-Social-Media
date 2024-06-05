@@ -22,22 +22,6 @@ const corsOptions = {
   credentials: true,
 };
 
-// const corsOptions = {
-//   origin: (origin, callback) => {
-//     if (
-//       origin &&
-//       (origin.match('https://localhost:5000') ||
-//         origin === 'http://localhost:3000')
-//     ) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-//   credentials: true,
-// };
-
 app.use(cors(corsOptions));
 
 cloudinary.config({

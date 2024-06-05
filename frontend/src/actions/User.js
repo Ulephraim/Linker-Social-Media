@@ -36,6 +36,7 @@ import {
   USERPROFILE_REQUEST,
   USERPROFILE_SUCCESS,
 } from '../constants/User';
+import { API_BASE_URL } from './api';
 
 export const signupUser =
   (name, userName, email, password) => async (dispatch) => {
@@ -44,7 +45,7 @@ export const signupUser =
         type: OTP_REQUEST,
       });
       const { data } = await axios.post(
-        'http://localhost:5000/user/register',
+        `${API_BASE_URL}/user/register`,
         {
           name,
           userName,
@@ -77,7 +78,7 @@ export const verifyOtp = (otp) => async (dispatch) => {
       type: REGISTER_REQUEST,
     });
     const { data } = await axios.post(
-      'http://localhost:5000/user/verify',
+      `${API_BASE_URL}/user/verify`,
       {
         otp,
       },
@@ -108,7 +109,7 @@ export const loginUser = (loginIdentifier, password) => async (dispatch) => {
       type: LOGIN_REQUEST,
     });
     const { data } = await axios.post(
-      'http://localhost:5000/user/login',
+      `${API_BASE_URL}/user/login`,
       {
         loginIdentifier,
         password,
@@ -140,7 +141,7 @@ export const loadUser = () => async (dispatch) => {
       type: LOADUSER_REQUEST,
     });
 
-    const { data } = await axios.get('http://localhost:5000/user/myProfile', {
+    const { data } = await axios.get(`${API_BASE_URL}/user/myProfile`, {
       withCredentials: true,
     });
 
@@ -161,7 +162,7 @@ export const logoutUser = () => async (dispatch) => {
     dispatch({
       type: LOGOUT_REQUEST,
     });
-    const { data } = await axios.get('http://localhost:5000/user/logout', {
+    const { data } = await axios.get(`${API_BASE_URL}/user/logout`, {
       withCredentials: true,
     });
     dispatch({
@@ -186,7 +187,7 @@ export const getAllUser =
         type: ALLUSER_REQUEST,
       });
       let { data } = await axios.get(
-        `http://localhost:5000/user/all?limit=${limit}&page=${page}`,
+        `${API_BASE_URL}/user/all?limit=${limit}&page=${page}`,
         {
           withCredentials: true,
         }
@@ -209,7 +210,7 @@ export const getUserProfile = (userName) => async (dispatch) => {
       type: USERPROFILE_REQUEST,
     });
     let { data } = await axios.get(
-      `http://localhost:5000/user/all?userName=${userName}`,
+      `${API_BASE_URL}/user/all?userName=${userName}`,
       {
         withCredentials: true,
       }
@@ -232,7 +233,7 @@ export const searchUserProfile = (searchQuery) => async (dispatch) => {
       type: SEARCHUSER_REQUEST,
     });
     let { data } = await axios.get(
-      `http://localhost:5000/user/all?userName=${searchQuery}&name=${searchQuery}`,
+      `${API_BASE_URL}/user/all?userName=${searchQuery}&name=${searchQuery}`,
       {
         withCredentials: true,
       }
@@ -254,7 +255,7 @@ export const followUser = (_id) => async (dispatch) => {
     dispatch({
       type: FOLLOW_REQUEST,
     });
-    let { data } = await axios.get(`http://localhost:5000/follow/${_id}`, {
+    let { data } = await axios.get(`${API_BASE_URL}/follow/${_id}`, {
       withCredentials: true,
     });
     dispatch({
@@ -277,7 +278,7 @@ export const editUser = (formData) => async (dispatch) => {
       type: GENERAL_REQUEST,
     });
     const { data } = await axios.patch(
-      `http://localhost:5000/user/update`,
+      `${API_BASE_URL}/user/update`,
       formData,
       {
         headers: {
@@ -305,12 +306,9 @@ export const deleteAvatar = () => async (dispatch) => {
     dispatch({
       type: GENERAL_REQUEST,
     });
-    const { data } = await axios.get(
-      `http://localhost:5000/user/deleteAvatar`,
-      {
-        withCredentials: true,
-      }
-    );
+    const { data } = await axios.get(`${API_BASE_URL}/user/deleteAvatar`, {
+      withCredentials: true,
+    });
     dispatch({
       type: GENERAL_SUCCESS,
       payload: data.message,
@@ -330,7 +328,7 @@ export const deleteUser = () => async (dispatch) => {
     dispatch({
       type: DELETE_REQUEST,
     });
-    const { data } = await axios.delete(`http://localhost:5000/user/delete`, {
+    const { data } = await axios.delete(`${API_BASE_URL}/user/delete`, {
       withCredentials: true,
     });
     dispatch({
@@ -353,7 +351,7 @@ export const forgotPassword = (email) => async (dispatch) => {
       type: GENERAL_REQUEST,
     });
     const { data } = await axios.post(
-      'http://localhost:5000/user/forgotPassword',
+      `${API_BASE_URL}/user/forgotPassword`,
       {
         email,
       },
@@ -384,7 +382,7 @@ export const changePassword =
         type: GENERAL_REQUEST,
       });
       const { data } = await axios.post(
-        'http://localhost:5000/user/changePassword',
+        `${API_BASE_URL}/user/changePassword`,
         {
           userName,
           otp,

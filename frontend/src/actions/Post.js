@@ -25,22 +25,19 @@ import {
   USERPOST_REQUEST,
   USERPOST_SUCCESS,
 } from '../constants/Post';
+import { API_BASE_URL } from './api';
 
 export const createPost = (myForm) => async (dispatch) => {
   try {
     dispatch({
       type: CREATEPOST_REQUEST,
     });
-    const { data } = await axios.post(
-      `http://localhost:5000/post/create`,
-      myForm,
-      {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-        withCredentials: true,
-      }
-    );
+    const { data } = await axios.post(`${API_BASE_URL}/post/create`, myForm, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+      withCredentials: true,
+    });
     dispatch({
       type: CREATEPOST_SUCCESS,
       payload: data.message,
@@ -59,7 +56,7 @@ export const getAllPost = () => async (dispatch) => {
       type: GETPOST_REQUEST,
     });
 
-    const { data } = await axios.get(`http://localhost:5000/post/all`, {
+    const { data } = await axios.get(`${API_BASE_URL}/post/all`, {
       withCredentials: true,
     });
 
@@ -81,7 +78,7 @@ export const getFollowingPost = () => async (dispatch) => {
       type: FOLLOWINGPOSTS_REQUEST,
     });
 
-    const { data } = await axios.get(`http://localhost:5000/post/following`, {
+    const { data } = await axios.get(`${API_BASE_URL}/post/following`, {
       withCredentials: true,
     });
     dispatch({
@@ -102,7 +99,7 @@ export const getMyPost = () => async (dispatch) => {
       type: MYPOST_REQUEST,
     });
 
-    const { data } = await axios.get(`http://localhost:5000/user/me/posts`, {
+    const { data } = await axios.get(`${API_BASE_URL}/user/me/posts`, {
       withCredentials: true,
     });
 
@@ -124,12 +121,9 @@ export const getMyBookmark = () => async (dispatch) => {
       type: MYPOST_REQUEST,
     });
 
-    const { data } = await axios.get(
-      `http://localhost:5000/user/me/bookmarks`,
-      {
-        withCredentials: true,
-      }
-    );
+    const { data } = await axios.get(`${API_BASE_URL}/user/me/bookmarks`, {
+      withCredentials: true,
+    });
 
     dispatch({
       type: MYPOST_SUCCESS,
@@ -149,12 +143,9 @@ export const getUserPost = (userId) => async (dispatch) => {
       type: USERPOST_REQUEST,
     });
 
-    const { data } = await axios.get(
-      `http://localhost:5000/user/posts/${userId}`,
-      {
-        withCredentials: true,
-      }
-    );
+    const { data } = await axios.get(`${API_BASE_URL}/user/posts/${userId}`, {
+      withCredentials: true,
+    });
 
     dispatch({
       type: USERPOST_SUCCESS,
@@ -174,7 +165,7 @@ export const getPostById = (postId) => async (dispatch) => {
       type: GETPOSTBYID_REQUEST,
     });
 
-    const { data } = await axios.get(`http://localhost:5000/post/${postId}`, {
+    const { data } = await axios.get(`${API_BASE_URL}/post/${postId}`, {
       withCredentials: true,
     });
 
@@ -196,12 +187,9 @@ export const likePost = (postId) => async (dispatch) => {
       type: GENERAL_REQUEST,
     });
 
-    const { data } = await axios.get(
-      `http://localhost:5000/post/likes/${postId}`,
-      {
-        withCredentials: true,
-      }
-    );
+    const { data } = await axios.get(`${API_BASE_URL}/post/likes/${postId}`, {
+      withCredentials: true,
+    });
 
     dispatch({
       type: GENERAL_SUCCESS,
@@ -225,7 +213,7 @@ export const commentPost =
       });
 
       const { data } = await axios.post(
-        `http://localhost:5000/post/comments/${postId}`,
+        `${API_BASE_URL}/post/comments/${postId}`,
         {
           comment,
         },
@@ -257,7 +245,7 @@ export const bookmarkPost = (postId) => async (dispatch) => {
     });
 
     const { data } = await axios.get(
-      `http://localhost:5000/post/bookmark/${postId}`,
+      `${API_BASE_URL}/post/bookmark/${postId}`,
       {
         withCredentials: true,
       }
@@ -285,7 +273,7 @@ export const editPost =
       });
 
       const { data } = await axios.patch(
-        `http://localhost:5000/post/${postId}`,
+        `${API_BASE_URL}/post/${postId}`,
         {
           caption,
         },
@@ -316,12 +304,9 @@ export const deletePost = (postId) => async (dispatch) => {
       type: GENERAL_REQUEST,
     });
 
-    const { data } = await axios.delete(
-      `http://localhost:5000/post/${postId}`,
-      {
-        withCredentials: true,
-      }
-    );
+    const { data } = await axios.delete(`${API_BASE_URL}/post/${postId}`, {
+      withCredentials: true,
+    });
 
     dispatch({
       type: GENERAL_SUCCESS,
