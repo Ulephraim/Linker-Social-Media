@@ -36,7 +36,7 @@ const SignUp = () => {
       setName(name);
       setEmail(email);
       setUserName(userName);
-      navigate('/details');
+      navigate('/');
     }
   };
 
