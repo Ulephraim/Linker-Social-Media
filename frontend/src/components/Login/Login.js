@@ -18,66 +18,79 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await dispatch(loginUser(loginIdentifier, password));
-    dispatch(loadUser());
+    try {
+      await dispatch(loginUser(loginIdentifier, password));
+      dispatch(loadUser());
+    } catch (error) {
+      console.error('Login failed:', error);
+    }
   };
+
   return (
     <>
       {userLoading ? (
         <LoadLogo />
       ) : (
-        <main className="page-wrapper">
+        <div className="login-page">
           <Helmet>
             <title>Login</title>
           </Helmet>
-          <div className="brand-logo">
-            <img src={brand} alt="" />
-          </div>
-          <div className="main-container">
-            <div className="content-wrapper">
-              <h1 className="linker">Log In to Linker</h1>
-              <form className="login-form" onSubmit={handleLogin}>
+          <div className="login-box">
+            <div className="login-box-logo">
+              <img src={brand} alt="Brand Logo" />
+            </div>
+            <h2>Welcome</h2>
+            <form onSubmit={handleLogin}>
+              <div className="input-group">
                 <input
                   type="text"
-                  placeholder="Enter Email or Username"
+                  placeholder="Email Address or Username"
                   value={loginIdentifier}
                   onChange={(e) => setLoginIdentifier(e.target.value)}
                   required
                 />
+              </div>
+              <div className="input-group">
                 <input
                   type={showPassword ? 'text' : 'password'}
-                  placeholder="Enter Password"
+                  name="password"
+                  placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
-                <div className="check-box">
+              </div>
+
+              <div className="options-container">
+                <div className="checkbox-group">
                   <input
                     type="checkbox"
-                    checked={showPassword}
+                    id="showPassword"
                     onChange={() => setShowPassword(!showPassword)}
                   />
-                  <label>Show</label>
+                  <label htmlFor="showPassword">Show Password</label>
                 </div>
-                <button type="submit" className="form-btn">
-                  {userLoading ? <Loader /> : 'Login'}
-                </button>
-              </form>
-              <span className="btn-span">or</span>
-              <Link className="custom-link" to="/forgotPassword">
-                <p>Forgotten Your Password</p>
-              </Link>
-
-              <button type="signup" className="signup-link">
-                <Link to="/signup">
-                  <span>Don't have an account ? SignUp</span>
+                <Link to="/forgot-password" className="forgot-password">
+                  Forgot Password?
                 </Link>
+              </div>
+
+              <button type="submit" className="login-btn">
+                {userLoading ? <Loader /> : 'Login'}
               </button>
-            </div>
+
+              <p className="signup-text">
+                Don't have an account?{' '}
+                <Link to="/signup" className="signup-link">
+                  Sign Up
+                </Link>
+              </p>
+            </form>
           </div>
-        </main>
+        </div>
       )}
     </>
   );
 };
+
 export default Login;

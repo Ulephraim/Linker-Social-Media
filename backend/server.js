@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-  origin: ['https://linker-frontend.vercel.app'],
+  origin: ['https://linker-frontend.vercel.app', 'http://localhost:3000'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   credentials: true,
 };

@@ -1,3 +1,6 @@
 /** @format */
 
-export const API_BASE_URL = 'https://linker-social-media.vercel.app';
+export const API_BASE_URL =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:5000'
+    : 'https://linker-social-media.vercel.app';

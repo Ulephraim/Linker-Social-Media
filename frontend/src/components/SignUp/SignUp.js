@@ -28,9 +28,8 @@ const SignUp = () => {
       !/\d/.test(password) ||
       !/[!@#$%^&*]/.test(password)
     ) {
-      // password does not meet criteria
       toast.error(
-        'password must be at least 6 characters long and must contain at least one number and one special character.'
+        'Password must be at least 6 characters long and contain at least one number and one special character.'
       );
     } else {
       await dispatch(signupUser(name, userName, email, password));
@@ -42,68 +41,87 @@ const SignUp = () => {
   };
 
   return (
-    <main className="page-wrapper">
+    <div className="signup-wrapper">
       <Helmet>
         <title>Sign Up</title>
       </Helmet>
-
-      <div className="brand-logo">
-        <img src={brand} alt="" />
-      </div>
-      <div className="main-container">
-        <div className="content-wrapper">
-          <h1 className="linker">Sign Up to Connect</h1>
-          <form onSubmit={handleSignUp}>
+      <div className="signup-card">
+        <div className="signup-logo-section">
+          <img src={brand} alt="Brand Logo" className="signup-brand-logo" />
+        </div>
+        <h2 className="signup-heading">Create Your Account</h2>
+        <form onSubmit={handleSignUp} className="signup-form">
+          <div className="signup-input-group">
             <input
               type="text"
-              placeholder="Enter Name"
+              placeholder="Full Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              className="signup-name-input"
               required
             />
+          </div>
+          <div className="signup-input-group">
             <input
               type="text"
-              placeholder="Enter Username"
+              placeholder="Username"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
+              className="signup-username-input"
               required
             />
+          </div>
+          <div className="signup-input-group">
             <input
               type="email"
-              placeholder="Enter Email"
+              placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="signup-email-input"
               required
             />
+          </div>
+          <div className="signup-input-group">
             <input
               type={showPassword ? 'text' : 'password'}
-              placeholder="Enter Password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="signup-password-input"
               required
             />
-            <div className="check-box">
+          </div>
+
+          <div className="signup-options">
+            <div className="signup-checkbox-group">
               <input
                 type="checkbox"
-                checked={showPassword}
+                id="signup-show-password"
                 onChange={() => setShowPassword(!showPassword)}
+                className="signup-checkbox"
               />
-              <label>Show</label>
+              <label
+                htmlFor="signup-show-password"
+                className="signup-checkbox-label"
+              >
+                Show Password
+              </label>
             </div>
-            <button type="submit" className="form-btn">
-              {userLoading ? <Loader /> : 'Sign Up'}
-            </button>
-          </form>
-
-          <div className="login-link">
-            <span>Already have an account ?</span>
-            <Link className="custom-link" to="/">
-              <span>Login</span>
-            </Link>
           </div>
-        </div>
+
+          <button type="submit" className="signup-submit-btn">
+            {userLoading ? <Loader /> : 'Sign Up'}
+          </button>
+
+          <p className="signup-login-text">
+            Already have an account?{' '}
+            <Link to="/" className="signup-login-link">
+              Log in
+            </Link>
+          </p>
+        </form>
       </div>
-    </main>
+    </div>
   );
 };
 export default SignUp;
