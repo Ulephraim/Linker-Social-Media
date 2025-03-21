@@ -48,6 +48,7 @@
     align-items: center;
     color: black;
     font-size: 20px;
+    margin-left: 0.5rem;
   }
   &:hover {
     background-color: #dddd;
@@ -70,6 +71,9 @@
   }
 }
 
+.plus-icon {
+  color: white;
+}
 .create-post img {
   filter: invert(100%);
 }

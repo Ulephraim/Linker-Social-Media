@@ -4,18 +4,24 @@ import React, { useState } from 'react';
 import './LeftSideBar.css';
 import { Link } from 'react-router-dom';
 import brandImg from '../../../../assets/brand-logo.png';
-import homedark from '../../../../assets/home.png';
-import home from '../../../../assets/home-dark.png';
-import notification from '../../../../assets/notification.png';
+import {
+  Home,
+  Bell,
+  Users,
+  User,
+  Home as HomeSolid,
+  Bell as BellSolid,
+  Users as UsersSolid,
+  User as UserSolid,
+  Pencil,
+  Settings,
+  PlusIcon,
+} from 'lucide-react';
 import logout from '../../../../assets/logout-dark.png';
-import notificationDark from '../../../../assets/notification-dark.png';
-import connect from '../../../../assets/connect.png';
 import passwordIcon from '../../../../assets/change-password.png';
-import connectDark from '../../../../assets/connect-dark.png';
 import warninglogo from '../../../../assets/warning-red.png';
 import deleteIcon from '../../../../assets/delete-dark.png';
 import create from '../../../../assets/create-dark.png';
-import userImg from '../../../../assets/userdark.png';
 import options from '../../../../assets/options-dark.png';
 import imageicon from '../../../../assets/image-dark.png';
 import { useDispatch, useSelector } from 'react-redux';
@@ -152,7 +158,11 @@ const LeftSideBar = () => {
             }}
             to="/"
           >
-            <img src={selectedOption === 'home' ? home : homedark} alt="Home" />
+            {selectedOption === 'home' ? (
+              <HomeSolid fill="currentColor" /> // Simulating solid effect
+            ) : (
+              <Home />
+            )}
             <p>Home</p>
           </Link>
 
@@ -164,14 +174,12 @@ const LeftSideBar = () => {
               handleOptionClick('notification');
             }}
           >
-            <img
-              src={
-                selectedOption === 'notification'
-                  ? notificationDark
-                  : notification
-              }
-              alt="notification"
-            />
+            {selectedOption === 'notification' ? (
+              <BellSolid fill="currentColor" />
+            ) : (
+              <Bell />
+            )}
+
             <p>Notification</p>
           </div>
 
@@ -185,10 +193,12 @@ const LeftSideBar = () => {
             }}
             to="/connect"
           >
-            <img
-              src={selectedOption === 'connect' ? connectDark : connect}
-              alt="Connect"
-            />
+            {selectedOption === 'connect' ? (
+              <UsersSolid fill="currentColor" />
+            ) : (
+              <Users />
+            )}
+
             <p>Connect</p>
           </Link>
 
@@ -199,19 +209,23 @@ const LeftSideBar = () => {
             onClick={handleMyPosts}
             to="/profile"
           >
-            <img src={userImg} alt="user profile" />
+            {selectedOption === 'profile' ? (
+              <UserSolid fill="currentColor" />
+            ) : (
+              <User />
+            )}
             <p>Profile</p>
           </Link>
 
           <div className="left-boxes create-post" onClick={openPopup}>
-            <img src={create} alt="Create" />
+            <PlusIcon className="plus-icon" />
             <p>Create Post</p>
           </div>
         </div>
 
         <div className="leftSideBar-Downcontent">
           <div className="left-boxes" onClick={toogleOptionPopup}>
-            <img src={options} alt="" />
+            <Settings />
             <p>More</p>
           </div>
 
